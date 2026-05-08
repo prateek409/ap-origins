@@ -2,29 +2,31 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
+const navOverlay = document.getElementById('navOverlay');
 
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
+function toggleMenu() {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    navOverlay.classList.toggle('active');
 }
 
-// Close mobile menu when clicking on a link
+function closeMenu() {
+    navMenu.classList.remove('active');
+    hamburger.classList.remove('active');
+    navOverlay.classList.remove('active');
+}
+
+if (hamburger) {
+    hamburger.addEventListener('click', toggleMenu);
+}
+
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
+    link.addEventListener('click', closeMenu);
 });
 
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar-container')) {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-    }
-});
+if (navOverlay) {
+    navOverlay.addEventListener('click', closeMenu);
+}
 
 // Portfolio Filter
 const filterButtons = document.querySelectorAll('.filter-btn');
