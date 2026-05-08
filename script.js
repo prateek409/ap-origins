@@ -80,7 +80,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Navbar active state on scroll
-const sections = document.querySelectorAll('section');
+const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
@@ -89,14 +89,14 @@ window.addEventListener('scroll', () => {
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
+        if (pageYOffset >= sectionTop - 100 && pageYOffset < sectionTop + sectionHeight - 100) {
             current = section.getAttribute('id');
         }
     });
 
     navItems.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
+        if (current && link.getAttribute('href').slice(1) === current) {
             link.classList.add('active');
         }
     });
