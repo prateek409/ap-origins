@@ -223,6 +223,7 @@ body {
     opacity: 0.08;
     animation: float 8s ease-in-out infinite;
     filter: blur(40px);
+    will-change: transform;
 }
 
 .elem-1 {
@@ -1072,6 +1073,10 @@ body {
 
     .nav-menu {
         width: 100%;
+    }
+
+    .floating-element {
+        display: none;
     }
 }
 
