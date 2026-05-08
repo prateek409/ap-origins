@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio - Indian Weddings, Corporate & Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <i class="fas fa-camera"></i> Drishya Studios
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#portfolio" class="nav-link"><i class="fas fa-images"></i> Portfolio</a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Capturing India's<br>Most Beautiful <span class="highlight">Celebrations</span></h1>
+            <p class="hero-subtitle">From grand Indian weddings to corporate milestones and vibrant festivals — we bring your most cherished moments to life.</p>
+            <a href="#portfolio" class="cta-button">Explore Our Work</a>
+        </div>
+        <div class="hero-background">
+            <div class="floating-element elem-1"></div>
+            <div class="floating-element elem-2"></div>
+            <div class="floating-element elem-3"></div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="section-header">
+            <h2>Our Work</h2>
+            <p>Showcasing the grandeur of Indian celebrations and corporate excellence</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="weddings">Weddings</button>
+            <button class="filter-btn" data-filter="corporate">Corporate</button>
+            <button class="filter-btn" data-filter="video">Cinematic Films</button>
+            <button class="filter-btn" data-filter="festivals">Festivals & Events</button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid">
+            <!-- Indian Wedding Projects -->
+            <div class="portfolio-item" data-category="weddings">
+                <div class="portfolio-img">
+                    <img src="images/rajasthani-wedding.jpg" alt="Royal Rajasthani Wedding">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Royal Rajasthani Wedding</h3>
+                            <p>A grand palace wedding in Udaipur</p>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="weddings">
+                <div class="portfolio-img">
+                    <img src="images/south-indian-wedding.jpg" alt="South Indian Wedding">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>South Indian Wedding</h3>
+                            <p>Traditional temple ceremony in Kerala</p>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="weddings">
+                <div class="portfolio-img">
+                    <img src="images/sangeet-mehndi.jpg" alt="Sangeet & Mehndi Night">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Sangeet & Mehndi Night</h3>
+                            <p>Vibrant pre-wedding celebrations</p>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indian Corporate Projects -->
+            <div class="portfolio-item" data-category="corporate">
+                <div class="portfolio-img">
+                    <img src="images/corporate-summit.jpg" alt="Corporate Summit Mumbai">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Corporate Summit Mumbai</h3>
+                            <p>Annual leadership conference coverage</p>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="corporate">
+                <div class="portfolio-img">
+                    <img src="images/tech-conference.jpg" alt="Tech Conference Bengaluru">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Tech Conference Bengaluru</h3>
+                            <p>India's biggest startup expo</p>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cinematic Film Projects -->
+            <div class="portfolio-item" data-category="video">
+                <div class="portfolio-img">
+                    <img src="images/wedding-film.jpg" alt="Wedding Cinematic Film">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Wedding Cinematic Film</h3>
+                            <p>Bollywood-style 4K wedding highlight reel</p>
+                            <a href="#" class="view-btn"><i class="fas fa-play"></i> Watch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="video">
+                <div class="portfolio-img">
+                    <img src="images/brand-film.jpg" alt="Brand Film">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Brand Film — Made in India</h3>
+                            <p>Cinematic brand story for Indian startups</p>
+                            <a href="#" class="view-btn"><i class="fas fa-play"></i> Watch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indian Festivals & Events -->
+            <div class="portfolio-item" data-category="festivals">
+                <div class="portfolio-img">
+                    <img src="images/holi-festival.jpg" alt="Holi Festival">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Holi — Festival of Colors</h3>
+                            <p>Vibrant celebration across Mathura & Vrindavan</p>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="festivals">
+                <div class="portfolio-img">
+                    <img src="images/diwali-festival.jpg" alt="Diwali Celebration">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h3>Diwali — Festival of Lights</h3>
+                            <p>Capturing the magic of a million diyas</p>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stat-card">
+            <h3>500+</h3>
+            <p>Celebrations Captured</p>
+        </div>
+        <div class="stat-card">
+            <h3>200+</h3>
+            <p>Indian Weddings</p>
+        </div>
+        <div class="stat-card">
+            <h3>50+</h3>
+            <p>Corporate Clients</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <h2>About Us</h2>
+            <p>Telling India's most beautiful stories through the lens</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>India's Premier Creative Studio</h3>
+                <p>Based in Mumbai, we specialize in capturing the grandeur of Indian weddings — from lavish Rajasthani palace ceremonies to intimate South Indian temple rituals. Our team has covered celebrations across 20+ Indian cities including Jaipur, Delhi, Goa, Kerala, and Udaipur.</p>
+                <p>We also work with India's top corporates and startups, documenting conferences, product launches, and brand stories with cinematic precision. Whether it's the colors of Holi or the lights of Diwali, we bring every Indian celebration to life.</p>
+                <div class="skills">
+                    <div class="skill-tag">Indian Wedding Photography</div>
+                    <div class="skill-tag">Cinematic Wedding Films</div>
+                    <div class="skill-tag">Drone & Aerial Shots</div>
+                    <div class="skill-tag">Sangeet & Mehndi Coverage</div>
+                    <div class="skill-tag">Corporate Events</div>
+                    <div class="skill-tag">Festival Documentation</div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="images/studio-profile.jpg" alt="Studio Profile">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p>Let's capture your next celebration together</p>
+        </div>
+        <div class="contact-content">
+            <div class="whatsapp-cta">
+                <i class="fab fa-whatsapp"></i>
+                <h3>Let's Talk on WhatsApp</h3>
+                <p>Share your event details — date, city, and vision — and we'll get back to you instantly.</p>
+                <a href="https://wa.me/917982763456?text=Hi%20Drishya%20Studios!%20I%27m%20interested%20in%20your%20services." class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat with Us on WhatsApp
+                </a>
+            </div>
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <h4>Phone</h4>
+                    <p>+91 79827 63456</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>hello@drishyastudios.in</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Location</h4>
+                    <p>Mumbai, India</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Drishya Studios. All rights reserved. | Proudly made in India</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
