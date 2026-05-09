@@ -22,14 +22,41 @@
 
 html {
     scroll-behavior: smooth;
+    min-height: 100%;
+    background: #0a0505;
 }
 
 body {
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text);
-    background: var(--primary);
+    background: transparent;
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+.scroll-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.scroll-bg-layer {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    will-change: opacity;
+}
+
+.scroll-bg-layer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 5, 5, 0.45) 0%, rgba(10, 5, 5, 0.65) 100%);
+    pointer-events: none;
 }
 
 /* Navigation */
@@ -41,8 +68,7 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(212, 160, 23, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
 }
 
 .navbar-container {
@@ -195,7 +221,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, rgba(26, 10, 10, 0.55) 0%, rgba(45, 21, 21, 0.55) 100%);
     color: white;
     padding: 150px 2rem 100px;
     text-align: center;
@@ -457,8 +483,9 @@ body {
 /* Portfolio Section */
 .portfolio {
     padding: 100px 2rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--tertiary) 100%);
+    background: linear-gradient(135deg, rgba(26, 10, 10, 0.45) 0%, rgba(45, 21, 21, 0.45) 50%, rgba(59, 28, 28, 0.45) 100%);
     position: relative;
+    margin-top: -1px;
 }
 
 .portfolio::before {
@@ -679,14 +706,20 @@ body {
 
 /* Stats Section */
 .stats {
+    width: 100%;
+    max-width: none;
+    padding: 80px 2rem;
+    background: linear-gradient(135deg, rgba(45, 21, 21, 0.5) 0%, rgba(59, 28, 28, 0.5) 100%);
+    margin: -1px 0 0;
+    position: relative;
+}
+
+.stats-inner {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
-    padding: 80px 2rem;
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--tertiary) 100%);
     max-width: 1400px;
     margin: 0 auto;
-    position: relative;
 }
 
 .stat-card {
@@ -749,8 +782,9 @@ body {
 /* About Section */
 .about {
     padding: 60px 2rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, rgba(26, 10, 10, 0.55) 0%, rgba(45, 21, 21, 0.55) 100%);
     position: relative;
+    margin-top: -1px;
 }
 
 .about::after {
@@ -857,9 +891,10 @@ body {
 /* Contact Section */
 .contact {
     padding: 100px 2rem;
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--tertiary) 100%);
+    background: linear-gradient(135deg, rgba(45, 21, 21, 0.5) 0%, rgba(59, 28, 28, 0.5) 100%);
     color: white;
     position: relative;
+    margin-top: -1px;
 }
 
 .contact-content {
@@ -1051,7 +1086,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--primary);
+    background: rgba(26, 10, 10, 0.65);
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     padding: 2rem;
@@ -1059,12 +1094,34 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.8rem;
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        min-height: calc(100vh - 60px);
+        min-height: calc(100svh - 60px);
+        padding: 0;
+    }
+
+    .hero-content {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 5rem 1.5rem 2.5rem;
+        box-sizing: border-box;
     }
 
     .hero-subtitle {
         font-size: 1.15rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .portfolio {
+        padding: 1.5rem 1.5rem 4rem;
+        margin-top: 0;
     }
 
     .section-header h2 {
@@ -1080,7 +1137,7 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .stats {
+    .stats-inner {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1097,8 +1154,8 @@ body {
 }
 
 @media (max-width: 576px) {
-    .hero {
-        padding: 100px 1rem 60px;
+    .hero-content {
+        padding: 4.5rem 1rem 2rem;
     }
 
     .hero-title {
@@ -1109,7 +1166,7 @@ body {
         gap: 1rem;
     }
 
-    .stats {
+    .stats-inner {
         grid-template-columns: 1fr;
     }
 

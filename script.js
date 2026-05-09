@@ -163,6 +163,51 @@ if (statsSection) {
     statsObserver.observe(statsSection);
 }
 
+// Scroll-driven background images (crossfade as you scroll)
+const scrollBg = document.getElementById('scrollBg');
+if (scrollBg) {
+    const layers = scrollBg.querySelectorAll('.scroll-bg-layer');
+    const n = layers.length;
+
+    let ticking = false;
+    function paintScrollBg() {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const p = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+        if (n <= 1) {
+            if (layers[0]) layers[0].style.opacity = '1';
+            ticking = false;
+            return;
+        }
+        const u = p * (n - 1);
+        const i0 = Math.floor(u);
+        const i1 = Math.min(i0 + 1, n - 1);
+        const t = u - i0;
+        layers.forEach((layer, i) => {
+            let op = 0;
+            if (i0 === i1) {
+                op = i === i0 ? 1 : 0;
+            } else if (i === i0) {
+                op = 1 - t;
+            } else if (i === i1) {
+                op = t;
+            }
+            layer.style.opacity = String(op);
+        });
+        ticking = false;
+    }
+
+    function onScroll() {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(paintScrollBg);
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', paintScrollBg);
+    paintScrollBg();
+}
+
 // Add active state styling to nav links
 const style = document.createElement('style');
 style.textContent = `
